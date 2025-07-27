@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ลงนามถวายพระพร</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Thai_traditional_pattern_background_gold.svg/1024px-Thai_traditional_pattern_background_gold.svg.png');
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      color: #000;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2em;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      padding: 10px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    select, button {
+      margin-top: 20px;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    button {
+      background-color: #ffd700;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/th/3/3f/King_Vajiralongkorn_2020_%28cropped%29.jpg" alt="พระบาทสมเด็จพระเจ้าอยู่หัว" />
+
+  <h1>สำหรับกราบบังคมทูลถวายพระพรชัยมงคล</h1>
+
+  <br><br>
+
+  <select id="message">
+    <option value="ขอองค์สมเด็จพระเจ้าอยู่หัวทรงพระเจริญยิ่งยืนนาน">ขอองค์สมเด็จพระเจ้าอยู่หัวทรงพระเจริญยิ่งยืนนาน</option>
+    <option value="ข้าพระพุทธเจ้าขอพระราชทานถวายพระพรชัยมงคล ขอองค์สมเด็จพระเจ้าอยู่หัว ทรงมีพระพลานามัยสมบูรณ์แข็งแรง และทรงพระเกษมสำราญ">ข้าพระพุทธเจ้าขอพระราชทานถวายพระพรชัยมงคล ขอองค์สมเด็จพระเจ้าอยู่หัว ทรงมีพระพลานามัยสมบูรณ์แข็งแรง และทรงพระเกษมสำราญ</option>
+    <option value="ขอพระองค์ทรงพระเจริญ มีพระชนย์มายุยิ่งยืนนานเป็นร่มโพธิ์ร่มไทรแก่ปวงชนชาวไทยขอให้พระองค์ทรงมีพลามัยสมบูรณ์แข็งแรงเป็นพ่อหลวงของปวงชนชาวไทยตลอดไป">ขอพระองค์ทรงพระเจริญ มีพระชนย์มายุยิ่งยืนนานเป็นร่มโพธิ์ร่มไทรแก่ปวงชนชาวไทยขอให้พระองค์ทรงมีพลามัยสมบูรณ์แข็งแรงเป็นพ่อหลวงของปวงชนชาวไทยตลอดไป</option>
+    <option value="ข้าพระพุทธเจ้า ขอพระราชทานถวายพระพรชัยมงคล ด้วยความจงรักภักดี ขออานุภาพแห่งคุณพระศรีรัตนตรัย พระบารมีแห่งพระสยามเทวาธิราช ตลอดจนพระบรมเดชานุภาพ แห่งสมเด็จพระบูรพมหากษัตริยาธิราชเจ้าทุกพระองค์ ได้โปรดดลบันดาลอภิบาลและประทานพรให้ใต้ฝ่าละอองธุลีพระบาท">ข้าพระพุทธเจ้า ขอพระราชทานถวายพระพรชัยมงคล ด้วยความจงรักภักดี ขออานุภาพแห่งคุณพระศรีรัตนตรัย พระบารมีแห่งพระสยามเทวาธิราช ตลอดจนพระบรมเดชานุภาพ แห่งสมเด็จพระบูรพมหากษัตริยาธิราชเจ้าทุกพระองค์ ได้โปรดดลบันดาลอภิบาลและประทานพรให้ใต้ฝ่าละอองธุลีพระบาท</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="submitForm()">ลงนาม</button>
+
+  <audio autoplay loop>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/7/70/Sansoen_Phra_Barami.ogg" type="audio/ogg">
+    เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+  </audio>
+
+  <script>
+    function submitForm() {
+      const msg = document.getElementById('message').value;
+      fetch("https://script.google.com/macros/s/AKfycbzdW2d2IsBc5Hh87aUjuJ9gJR_-tm7jKqxWmhFYcsQArP6lbodYOuj4pypv8P76R3Tc/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "message=" + encodeURIComponent(msg),
+      })
+      .then(() => alert("ลงนามเรียบร้อยแล้ว"))
+      .catch(error => alert("เกิดข้อผิดพลาด: " + error));
+    }
+  </script>
+
+</body>
+</html>
+
